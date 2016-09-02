@@ -2,9 +2,8 @@
 
 echo "Add an enrollment token"
 
-# TODO(mioi): add an enrollment token for your team?
 sudo mkdir -p /var/lib/sftd
-echo "eyJzIjoiYjQ5YTE1OTctNzUwNS00MDJlLWE5YjEtYzhmZTNmN2NhMTJhIiwidSI6Imh0dHBzOi8vYXBwLnNjYWxlZnQuY29tIn0=" | sudo tee /var/lib/sftd/enrollment.token
+echo "eyJzIjoiMDZmY2ZmNmItZTYxYi00ZTc1LTk3YWUtOWI1ZTg0YjhlOTk3IiwidSI6Imh0dHBzOi8vYXBwLnNjYWxlZnQuY29tIn0=" | sudo tee /var/lib/sftd/enrollment.token
 
 export DEBIAN_FRONTEND=noninteractive
 
