@@ -1,10 +1,6 @@
 resource "aws_security_group" "default" {
   description = "ICMP, NTP, SSH, HTTPS"
 
-  tags {
-    Name = "SFT-WIN"
-  }
-
   ingress {
     from_port   = -1
     to_port     = -1
@@ -21,7 +17,7 @@ resource "aws_security_group" "default" {
 
   # HTTPS
   ingress {
-    from_port   = 0
+    from_port   = 443
     to_port     = 443
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
@@ -29,7 +25,7 @@ resource "aws_security_group" "default" {
 
   # SSH
   ingress {
-    from_port   = 0
+    from_port   = 22
     to_port     = 22
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
