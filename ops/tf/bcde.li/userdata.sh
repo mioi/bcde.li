@@ -6,14 +6,14 @@ echo "Token 61b03f88-be6d-42c2-bd98-99f2464b3f91 in project bcde.li issued 2016-
 sudo mkdir -p /var/lib/sftd
 echo "eyJzIjoiNjFiMDNmODgtYmU2ZC00MmMyLWJkOTgtOTlmMjQ2NGIzZjkxIiwidSI6Imh0dHBzOi8vYXBwLnNjYWxlZnQuY29tIn0=" | sudo tee /var/lib/sftd/enrollment.token
 
-echo "Add a basic configuration"
-sftcfg=<EOF
+echo "Add a basic sftd configuration"
+sudo mkdir -p /etc/sft/
+sftcfg=$(cat <<EOF
 ---
 # altname - An altname for the server
 AltNames:            ["${altname}"]
 EOF
-
-sudo mkdir -p /etc/sft/
+)
 echo -e "$sftcfg" | sudo tee /etc/sft/sftd.yaml
 
 export DEBIAN_FRONTEND=noninteractive
