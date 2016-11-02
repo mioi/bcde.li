@@ -18,5 +18,5 @@ provider "aws" {
 
 module "web" {
   source = "../../tf/bcde.li"
-  azs = ["${var.azs}"]
+  azs    = ["${var.azs}"]
 }
