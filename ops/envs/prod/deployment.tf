@@ -6,6 +6,10 @@ variable "region" {
   default = "us-west-2"
 }
 
+variable "azs" {
+  default = ["us-west-2a", "us-west-2b", "us-west-2c"]
+}
+
 provider "aws" {
   region     = "${var.region}"
   secret_key = "${var.secret_key}"
@@ -14,4 +18,5 @@ provider "aws" {
 
 module "web" {
   source = "../../tf/bcde.li"
+  azs = ["${var.azs}"]
 }
