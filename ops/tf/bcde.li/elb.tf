@@ -13,6 +13,13 @@ resource "aws_elb" "web_elb" {
     lb_protocol = "tcp"
   }
 
+  listener {
+    instance_port = 80
+    instance_protocol = "tcp"
+    lb_port = 80
+    lb_protocol = "tcp"
+  }
+
   health_check {
     healthy_threshold = 2
     unhealthy_threshold = 2
